@@ -3,8 +3,10 @@
   PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
   "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-	<properties url="file:///D:\mybatisGenerator\src\main\resources\config.properties"></properties>
-	
+	<properties url="file:////D:/jeesite\mybatisGenerator\src\main\resources\config.properties"></properties>
+	<!-- 
+		http://generator.sturgeon.mopaas.com/index.html
+	 -->
 	<context id="mysql" targetRuntime="MyBatis3">
 		<jdbcConnection driverClass="${jdbc.classDriver}"
 			connectionURL="${jdbc.url}"
