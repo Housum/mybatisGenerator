@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+	<properties url="file:///D:\jeesite\mybatisGenerator\src\main\resources\config.properties"></properties>
+	
+	<context id="mysql" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="${jdbc.classDriver}"
+			connectionURL="${jdbc.url}"
+			password="${jdbc.password}"
+			userId="${jdbc.username}"
+		/>
+		<javaTypeResolver>
+			<!-- 此功能是为了使数据库DECIMAL和NUMERIC列容易处理  默认是false -->
+			<property name="forceBigDecimals" value="false"/>
+		</javaTypeResolver>
+		
+		<javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}">
+			<property name="trimStrings" value="true"/>
+		</javaModelGenerator>
+		
+		<sqlMapGenerator targetPackage="${targetXmlPackage}" targetProject="${targetResourcesProject}"/>
+		
+		<javaClientGenerator targetPackage="${targetMapperPackage}" type="XMLMAPPER" targetProject="${targetJavaProject}"/>
+		
+		<!-- 
+			默认的情况下  设置为true
+		 -->
+		<table tableName="%"
+			enableInsert="true"
+			enableDeleteByPrimaryKey="true"
+			enableSelectByPrimaryKey="true"
+			enableUpdateByPrimaryKey="true"
+			enableCountByExample="false"
+			enableDeleteByExample="false"
+			enableSelectByExample="false"
+			enableUpdateByExample="false"
+			>
+			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+	</context>
+</generatorConfiguration>
