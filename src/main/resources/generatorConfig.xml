@@ -8,6 +8,12 @@
 		http://generator.sturgeon.mopaas.com/index.html
 	 -->
 	<context id="mysql" targetRuntime="MyBatis3">
+	
+		 <commentGenerator>
+	        <property name="suppressDate" value="true"/>
+	        <property name="suppressAllComments" value="true" />
+   		</commentGenerator>
+   		
 		<jdbcConnection driverClass="${jdbc.classDriver}"
 			connectionURL="${jdbc.url}"
 			password="${jdbc.password}"
@@ -26,10 +32,12 @@
 		
 		<javaClientGenerator targetPackage="${targetMapperPackage}" type="XMLMAPPER" targetProject="${targetJavaProject}"/>
 		
+
 		<!-- 
 			默认的情况下  设置为true
 		 -->
-		<table tableName="%"
+		<table tableName="SHOP_LOG"
+			domainObjectName="SysLog"
 			enableInsert="true"
 			enableDeleteByPrimaryKey="true"
 			enableSelectByPrimaryKey="true"
@@ -39,7 +47,9 @@
 			enableSelectByExample="false"
 			enableUpdateByExample="false"
 			>
-			<generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+			<generatedKey column="id" sqlStatement="Oracle" identity="true"/>
 		</table>
+		
+
 	</context>
 </generatorConfiguration>

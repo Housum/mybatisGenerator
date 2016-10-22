@@ -10,13 +10,15 @@
   	<targetJavaProject>${basedir}/src/main/java</targetJavaProject>
   	<targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
   </properties>
+  
   <dependencies>
-	<!--mysql-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.version}</version>
-        </dependency>
+  	<dependency>
+		    <groupId>com.oracle</groupId>
+		    <artifactId>ojdbc14</artifactId>
+		    <version>10.2.0.4.0</version>
+		    <scope>system</scope>
+  			<systemPath>${project.basedir}/src/main/webapp/lib/ojdbc14-10.2.0.5.0.jar</systemPath>
+  	</dependency>
   </dependencies>
   <build>
   	<plugins>
@@ -35,11 +37,13 @@
           	<verbose>true</verbose>
           </configuration>
           <dependencies>
-    	      <dependency>
-                  <groupId>mysql</groupId>
-                  <artifactId>mysql-connector-java</artifactId>
-                  <version>${mysql.version}</version>
-              </dependency>
+			  	<dependency>
+					    <groupId>com.oracle</groupId>
+					    <artifactId>ojdbc14</artifactId>
+					    <version>10.2.0.4.0</version>
+					    <scope>system</scope>
+			  			<systemPath>${project.basedir}/src/main/webapp/lib/ojdbc14-10.2.0.5.0.jar</systemPath>
+			  	</dependency>
           </dependencies>
         </plugin>
   	</plugins>
